@@ -46,24 +46,70 @@ export const  constStyles = StyleSheet.create({
         paddingHorizontal: 10,
         fontSize: 15,
 
-    }
+    },
+    mentorRectangles:{
+        width: 230,
+        height: 150,
+        backgroundColor: COLORS.white,
+        borderRadius: 10,
+        marginRight: 10,
+        marginBottom: 10,
+        padding: 10,
+    },
+    profileImage:{
+        width: 45,
+        height: 45,
+        borderRadius: 25,
+        backgroundColor: COLORS.green,
+        marginRight: 10,
+    },
+    rectangleText: {
+        fontSize: 14,
+        color: COLORS.gray,
+        fontWeight: 400,
+        width: 291,
+        fontWeight: 500,
+    },
 })
+
+const profile1 = require('./assets/profiles/profile1.png')
+const profile2 = require('./assets/profiles/profile2.png')
+const profile3 = require('./assets/profiles/profile3.png')
 
 export const meetings =[
     {
         id: 1,
-        title: 'Design meeting',
+        title: 'Health chat with Lidia',
         time: 'Today at 9:00 AM - 30 mins',
+        pic: profile1,
+
     },
     {
         id: 2,
-        title: 'Design meeting',
+        title: 'Mentoring with Tom',
         time: 'Today at 9:00 AM - 30 mins',
+        pic: profile2,
     },
     {
         id: 3,
-        title: 'Design meeting',
+        title: 'Learn Programming with Notail',
         time: 'Today at 9:00 AM - 30 mins',
+        pic: profile3,
     },
     
+]
+
+export const mentors = [
+    {
+        id: 1,
+        name: 'Anna Tchaiko',
+        title: 'Health Coach',
+        pic: profile1,
+    },
+    {
+        id: 2,
+        name: 'Mark Thomson',
+        title: 'Health Coach',
+        pic: profile2,
+    },
 ]
