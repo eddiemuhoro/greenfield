@@ -2,6 +2,9 @@ import { FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'r
 import React from 'react'
 import { COLORS, constStyles } from '../../constants'
 import { meetings } from '../../constants'
+import { Image } from 'react-native'
+import { MaterialIcons } from '@expo/vector-icons';
+import Recommended from './Recommended'
 
 
 const Home = ({navigation}) => {
@@ -9,8 +12,8 @@ const Home = ({navigation}) => {
     const renderItem =  ({item})=>(
         <TouchableOpacity style={styles.meetingItem}>
             <View style={styles.meetingContent}>
-            <View style={styles.meetingImage}>
-
+            <View style={constStyles.profileImage}>
+                <Image source={item.pic} />
             </View>
             <View>
                 <Text style={constStyles.miniHeader}>{item.title}</Text>
@@ -18,13 +21,12 @@ const Home = ({navigation}) => {
             </View>
             </View>
             <View>
-                <Text>k</Text>
+                <MaterialIcons name="navigate-next" size={24} color="black" />
             </View>
         </TouchableOpacity>
     )
   return (
     <View style={constStyles.container}>
-
      <View>
         <Text style={constStyles.headerText}> Good morning, Michael </Text>
         <Text style={constStyles.normalText}>It’s a great day to learn something new!</Text>
@@ -34,7 +36,7 @@ const Home = ({navigation}) => {
      </View>
 
      <View>
-        <Text style={constStyles.miniHeader}>Upcoming meeting</Text>
+        <Text style={constStyles.miniHeader}>Upcoming meetings</Text>
         <FlatList
             data={meetings}
             showsHorizontalScrollIndicator={false}
@@ -43,6 +45,7 @@ const Home = ({navigation}) => {
             keyExtractor={item => item.id}
             />
      </View>
+     <Recommended />
     </View>
   )
 }
