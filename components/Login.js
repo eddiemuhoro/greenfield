@@ -19,7 +19,7 @@ const Login = ({navigation}) => {
   
     useEffect(() => {
         loadFonts();
-    }, []);
+    }, [fontLoaded]);
   return (
     <View style={styles.container}> 
       <View style={styles.imageContainer}>
