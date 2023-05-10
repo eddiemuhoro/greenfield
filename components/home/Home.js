@@ -27,25 +27,42 @@ const Home = ({navigation}) => {
     )
   return (
     <View style={constStyles.container}>
-     <View>
-        <Text style={constStyles.headerText}> Good morning, Michael </Text>
-        <Text style={constStyles.normalText}>It’s a great day to learn something new!</Text>
-     </View>
-     <View>
-        <TextInput style={constStyles.searchBar} placeholder="Search anything ..." />
-     </View>
+         <FlatList
+         showsVerticalScrollIndicator={false}
+          data={[{ key: 'header' },  { key: 'footer' }]}
+          renderItem={({ item }) =>
+            item.key === 'header' ? (
+                  <View>
 
-     <View>
-        <Text style={constStyles.miniHeader}>Upcoming meetings</Text>
-        <FlatList
-            data={meetings}
-            showsHorizontalScrollIndicator={false}
-           
-            renderItem={renderItem}
-            keyExtractor={item => item.id}
-            />
-     </View>
-     <Recommended />
+                      <View>
+                          <Text style={constStyles.headerText}> Good morning, Joan </Text>
+                          <Text style={constStyles.normalText}>It’s a great day to learn something new!</Text>
+                      </View>
+                      <View>
+                          <TextInput style={constStyles.searchBar} placeholder="Search anything ..." />
+                      </View>
+
+                      <View>
+                          <Text style={constStyles.miniHeader}>Upcoming meetings</Text>
+                          <FlatList
+                            style={{marginVertical: 10}}
+                              data={meetings}
+                              showsHorizontalScrollIndicator={false}
+                              renderItem={renderItem}
+                              keyExtractor={item => item.id}
+                          />
+                      </View>
+
+                      <Text style={constStyles.miniHeader}>Recommended mentors</Text>
+                      <Recommended />
+                  </View>
+            ) : item.key === 'footer' ? (
+              <View style={{ height: 100 }}><Text></Text></View>
+            ) : null
+          }
+          keyExtractor={(item) => item.key}
+        />
+     
     </View>
   )
 }
@@ -64,6 +81,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: COLORS.white,
         padding: 10,
+    
         marginVertical: 10,
         borderRadius: 10,
         shadowColor: COLORS.gray,
