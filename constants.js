@@ -49,12 +49,21 @@ export const  constStyles = StyleSheet.create({
     },
     mentorRectangles:{
         width: 230,
-        height: 150,
+        
         backgroundColor: COLORS.white,
         borderRadius: 10,
         marginRight: 10,
-        marginBottom: 10,
+        marginVertical: 10,
         padding: 10,
+        shadowColor: COLORS.gray,
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.25,
+        elevation: 10,
+        
+
     },
     profileImage:{
         width: 45,
@@ -75,6 +84,7 @@ export const  constStyles = StyleSheet.create({
 const profile1 = require('./assets/profiles/profile1.png')
 const profile2 = require('./assets/profiles/profile2.png')
 const profile3 = require('./assets/profiles/profile3.png')
+const favPic = require('./assets/fav.svg')
 
 export const meetings =[
     {
@@ -112,4 +122,26 @@ export const mentors = [
         title: 'Health Coach',
         pic: profile2,
     },
+]
+
+
+export const popular = [
+        {
+            id: 1,
+            name: 'Jesse Vainikka',
+            title: 'Relationships',
+            pic: profile1,
+        },
+        {
+            id: 2,
+            name: 'Anathan Pham',
+            title: 'Leadership',
+            pic: profile2,
+        },
+        {
+            id: 3,
+            name: 'Topias Miikka',
+            title: 'Mathematics',
+            pic: profile3,
+        },
 ]
