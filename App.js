@@ -11,6 +11,8 @@ export default function App() {
   
       <StackNavs />
   
+      <StatusBar  />
+
     </NavigationContainer>
   );
 }
