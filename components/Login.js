@@ -13,13 +13,18 @@ const Login = ({navigation}) => {
     const loadFonts = async () => {
       await Font.loadAsync({
         'Roboto-Black': require('../assets/fonts/Roboto-Black.ttf'),
+        'Roboto-Bold': require('../assets/fonts/Roboto-Bold.ttf'),
       });
       setFontLoaded(true);
     };
   
     useEffect(() => {
         loadFonts();
-    }, [fontLoaded]);
+    }, []);
+    if (!fontLoaded) {
+      // Return a loading screen or null until the fonts are loaded
+      return null;
+    }
   return (
     <View style={styles.container}> 
       <View style={styles.imageContainer}>
@@ -73,7 +78,7 @@ const styles = StyleSheet.create({
         fontSize: 34,
         fontWeight: 'bold',
         textAlign: 'center',
-        fontFamily: 'Roboto-Bold',
+        fontFamily: 'Roboto-Black',
     },
     normalText: {
         fontSize: 15,
