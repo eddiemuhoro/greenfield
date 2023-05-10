@@ -3,25 +3,28 @@ import React from 'react'
 import Login from '../components/Login'
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../components/home/Home';
+import BottomNav from './BottomNav';
 
 const Stack = createNativeStackNavigator();
 
 const StackNavs = () => {
   return (
    
-    <Stack.Navigator>
+    <Stack.Navigator
+    initialRouteName='Home'
+    >
     <Stack.Screen
       name="Welcome"
       component={Login}
       options={
-        {title: 'Welcome'}
+        {headerShown: false}
     }
     />
     <Stack.Screen name="Home"
     //hide header
     options={{headerShown: false}}
     
-     component={Home} />
+     component={BottomNav} />
   </Stack.Navigator>
    
   )
