@@ -84,7 +84,6 @@ export const  constStyles = StyleSheet.create({
 const profile1 = require('./assets/profiles/profile1.png')
 const profile2 = require('./assets/profiles/profile2.png')
 const profile3 = require('./assets/profiles/profile3.png')
-const favPic = require('./assets/fav.svg')
 
 export const meetings =[
     {
